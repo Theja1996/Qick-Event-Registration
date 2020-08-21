@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "833029518208",
+    "firebase_url": "https://register-8f69a.firebaseio.com",
+    "project_id": "register-8f69a",
+    "storage_bucket": "register-8f69a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833029518208:android:9530f950da0febf34dc765",
+        "android_client_info": {
+          "package_name": "com.spatial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833029518208-s1fn13l69h1ki8ep4jb130buhd8komro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIkV31VMs-nms30i6y4D-GRl3o8lO0mpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833029518208-s1fn13l69h1ki8ep4jb130buhd8komro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
