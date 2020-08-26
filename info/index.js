@@ -1,21 +1,32 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable prettier/prettier */
-import React, {Component} from 'react';
+/*import React, {Component} from 'react';
 import {Text, View, StyleSheet,Button,Alert,TouchableOpacity,SafeAreaView} from 'react-native';
 import {Container, Header, Content,Spinner, Textarea, Form,Icon,Item,Label,Input,Picker} from 'native-base';
 //import { SafeAreaView } from 'react-navigation';
-
+import {postBlog} from '../actions';
+import {connect} from 'react-redux';
 
  
 
 class TextArea extends Component {
+  state={
+    name:"",
+  }
+  submit=()=>{
+   this.props.postBlog(this.state.name)
+   this.setState({
+     name:"",
+   })
+  }
   render() {
     return (
        
       <Form >
           
       <Item inlineLabel placeholderTextColor="#FFFFFF" >
-              <Label style={styles.button1} rowSpan={2}  placeholderTextColor="#FFFFFF" bordered placeholder="Your Name" >First Name</Label>
-              <Input style={styles.button2} />
+              <Label style={styles.button1} rowSpan={2}  placeholderTextColor="#FFFFFF" bordered placeholder="name" >First Name</Label>
+              <Input style={styles.button2} placeholder="name" onChangeText={name=>this.setState({name})} value={this.state.name}/>
             </Item>
             <Item inlineLabel placeholderTextColor="#FFFFFF">
               <Label style={styles.button1} rowSpan={2}  placeholderTextColor="#FFFFFF" bordered placeholder="Your Name" >Last Name</Label>
@@ -43,7 +54,7 @@ class TextArea extends Component {
             </Item>
             
         <SafeAreaView >
-        <TouchableOpacity  
+        <TouchableOpacity  onPress={this.submit}
       
     onPress={() => Alert.alert('Success Submition')}>
          
@@ -113,4 +124,4 @@ color:'#FFFFFF',
   },
 
 });
-export default TextArea;
+export default connect(null, {postBlog}) (TextArea);*/

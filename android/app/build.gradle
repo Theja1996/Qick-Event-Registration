@@ -1,5 +1,5 @@
 apply plugin: "com.android.application"
-apply plugin: 'com.google.gms.google-services'
+//pply plugin: 'com.google.gms.google-services'
 import com.android.build.OutputFile
 
 /**
@@ -183,7 +183,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
-   implementation 'com.google.firebase:firebase-analytics:17.5.0'
+  // implementation 'com.google.firebase:firebase-analytics:17.5.0'
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"

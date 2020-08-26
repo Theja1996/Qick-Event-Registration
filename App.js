@@ -1,6 +1,6 @@
 // In App.js in a new project
 
-import * as React from 'react';
+/*import * as React from 'react';
 import 'react-native-gesture-handler';
 //import {View, Text,Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
@@ -16,7 +16,13 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import {Textarea, Form} from 'native-base';
+import {Form} from 'native-base';
+import firebase from 'firebase';
+import {Provider} from 'react-redux';
+import {creatStore, applyMiddleware} from 'redux';
+import ReduxThunk from 'redux-thunk';
+import reducer from '.reducer';
+
 const image = {
   uri:
     'https://fsb.zobj.net/crop.php?r=ZQ7JiYdnKX5QUSQEKVWSRnm6sosA7oLM2CuBlUC9kYhaPY--TJ_cKdhtO_KW1NHlJTiBQCKWV7qDLfNgmlDbDGUl-5H98vr4kkj-7uEgDYtlQ7D_GPTOEEvO6UWlF2sPao7j4VZ4D1doFVpR',
@@ -41,10 +47,7 @@ function HomeScreen({navigation}) {
                   placeholderTextColor="#FFFFFF">
                   WELCOME
                 </Text>
-                <Text
-                  style={styles.button1}
-            
-                  placeholderTextColor="#FFFFFF">
+                <Text style={styles.button1} placeholderTextColor="#FFFFFF">
                   WELCOME
                 </Text>
 
@@ -77,11 +80,12 @@ function DetailsScreen({navigation}) {
 const Stack = createStackNavigator();
 
 function App() {
+  const state = creatStore(reducer, {}, applyMiddleware(ReduxThunk));
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen name="Welcome" component={HomeScreen} />
-
+        <Provider store={state} />
         <Stack.Screen name="Information" component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
@@ -137,5 +141,28 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
-    },
-});
+  },
+});*/
+//import liraries
+import React, {Component} from 'react';
+import Routes from './components/Routes';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import ReduxThunk from 'redux-thunk';
+import reducers from './reducers';
+
+// create a component
+class App extends Component {
+  render() {
+    const state = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
+    return (
+      <Provider store={state}>
+        <Routes />
+      </Provider>
+    );
+  }
+}
+
+//make this component available to the app
+export default App;
