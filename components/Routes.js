@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable no-undef */
 import Blogs from './Blogs';
 import Post from './Post';
 import Edit from './Edit';
